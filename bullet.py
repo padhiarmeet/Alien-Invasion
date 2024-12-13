@@ -1,7 +1,7 @@
 import pygame
 from pygame.sprite import Sprite
 
-class Bullet(Sprite):
+class Bullet(Sprite): #Sprite is used for perform batch updates, collision detection, and drawing operations on all sprites in a group.
 
     def __init__(self,ai_game):
 
