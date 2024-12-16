@@ -16,9 +16,11 @@ class Bullet(Sprite): #Sprite is used for perform batch updates, collision detec
 
         self.y = float(self.rect.y)
     
+
     def update(self):
         self.y -= self.settings.bullet_speed #Update bulltet speed
         self.rect.y = self.y
+    
     
     def draw_bullet(self):
         pygame.draw.rect(self.screen, self.color, self.rect)

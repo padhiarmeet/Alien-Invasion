@@ -6,6 +6,7 @@ BROWN = (80, 40, 20)
 BLACK = (0, 0, 0)
 
 class Button:
+
     def __init__(self, ai_game, msg):
        
         self.screen = ai_game.screen
@@ -28,12 +29,16 @@ class Button:
         #############################
         self._prep_msg(msg)
     
+
     def _prep_msg(self,msg):
+
         self.msg_image = self.font.render(msg, True, self.text_color,self.button_color)
         self.msg_image_rect = self.msg_image.get_rect()
         self.msg_image_rect.center = self.rect.center
 
+
     def _draw_button(self):
+        
         # self.screen.fill(self.button_color,self.rect)
         # self.screen.blit(self.msg_image,self.msg_image_rect)
         shadow_rect = self.rect.move(self.shadow_offset, self.shadow_offset)
