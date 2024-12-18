@@ -8,9 +8,13 @@ class Bullet(Sprite): #Sprite is used for perform batch updates, collision detec
         super().__init__()
         self.screen = ai_game.screen;
         self.settings = ai_game.settings
-        self.color = self.settings.bullet_color
+        # self.color = self.settings.bullet_color
+        self.image = pygame.image.load('image/laser_img6.png')
+        self.image = pygame.transform.scale(self.image, (6,20))
+    
+        self.rect = self.image.get_rect()
 
-        self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
+        # self.rect = pygame.Rect(0, 0, self.settings.bullet_width, self.settings.bullet_height)
 
         self.rect.midtop = ai_game.ship.rect.midtop
 
@@ -23,7 +27,7 @@ class Bullet(Sprite): #Sprite is used for perform batch updates, collision detec
     
     
     def draw_bullet(self):
-        pygame.draw.rect(self.screen, self.color, self.rect)
+        self.screen.blit(self.image, self.rect)
 
 
 
