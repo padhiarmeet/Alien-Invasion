@@ -12,7 +12,7 @@ from scorebord import Scorebord
 class AlienInvasion:
 
     def __init__(self):
-        pygame.init()
+        pygame.init()  
         self.settings = Settings()
 
         self.screen = pygame.display.set_mode((0,0),pygame.FULLSCREEN)
@@ -91,9 +91,11 @@ class AlienInvasion:
 
 
     def _fire_bullet(self):
+        collision_sound = pygame.mixer.Sound("image/laser.mp3")
 
         if len(self.bullets) < self.settings.bullet_allowed:
             new_bullet = Bullet(self)
+            collision_sound.play()
             self.bullets.add(new_bullet)
 
 
@@ -117,7 +119,9 @@ class AlienInvasion:
 
                 self.stats.score += self.settings.alien_point 
                 self.sb.prep_score()
+                
                 self.sb.check_high_score()
+                
 
             if not self.aliens:
                 self.bullets.empty()
