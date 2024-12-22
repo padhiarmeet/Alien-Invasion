@@ -172,7 +172,8 @@ class AlienInvasion:
 
         if pygame.sprite.spritecollideany(self.ship,self.aliens):
            self._ship_hit()
-           self._check_alien_bottom()
+           
+        self._check_alien_bottom()
     
 
     def _check_fleet_edges(self):
@@ -216,6 +217,7 @@ class AlienInvasion:
 
         for alien in self.aliens.sprites():
             if alien.rect.bottom >= screen_rect.bottom:
+            
                 self._ship_hit()
                 break
         
