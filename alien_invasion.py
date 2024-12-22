@@ -77,16 +77,26 @@ class AlienInvasion:
     def _check_update(self):
 
         self.screen.fill(self.settings.bg_color)
-        self.ship.blitme()
+        # self.ship.blitme()
 
-        for bullet in self.bullets.sprites():
-            bullet.draw_bullet()
-        self.aliens.draw(self.screen)
-        self.sb.show_score()
+        # for bullet in self.bullets.sprites():
+        #     bullet.draw_bullet()
+        # self.aliens.draw(self.screen)
+        # self.sb.show_score()
 
+        # if not self.stats.game_active:
+        #     self.play_button._draw_button()
+        
+        # pygame.display.flip()
         if not self.stats.game_active:
             self.play_button._draw_button()
-        
+        else:
+            self.ship.blitme()
+            for bullet in self.bullets.sprites():
+                bullet.draw_bullet()
+            self.aliens.draw(self.screen)
+            self.sb.show_score()
+
         pygame.display.flip()
 
 
@@ -172,7 +182,7 @@ class AlienInvasion:
 
         if pygame.sprite.spritecollideany(self.ship,self.aliens):
            self._ship_hit()
-           
+
         self._check_alien_bottom()
     
 
@@ -226,19 +236,37 @@ class AlienInvasion:
        
         if self.play_button.rect.collidepoint(mouse_pos):
 
-            button_clicked = self.play_button.rect.collidepoint(mouse_pos)
+            # button_clicked = self.play_button.rect.collidepoint(mouse_pos)
             
-            if button_clicked and not self.stats.game_active:
+            # if button_clicked and not self.stats.game_active:
+            #     self.settings.initialize_dynamic_settings()
+            #     self.stats.reset_stats()
+            #     self.aliens.empty()
+            #     self.bullets.empty()
+            #     self._create_fleet()
+            #     self.ship._center_ship()
+            #     self.stats.game_active = True
+            #     self.sb.prep_score()
+            #     self.sb.prep_level()
+            #     self.sb.prep_ships()
+            #     pygame.mouse.set_visible(False)
+            if not self.stats.game_active:
+            
                 self.settings.initialize_dynamic_settings()
                 self.stats.reset_stats()
+                self.stats.game_active = True
+
+                
+                self.sb.prep_score()
+                self.sb.prep_level()
+                self.sb.prep_ships()
+
+                
                 self.aliens.empty()
                 self.bullets.empty()
                 self._create_fleet()
                 self.ship._center_ship()
-                self.stats.game_active = True
-                self.sb.prep_score()
-                self.sb.prep_level()
-                self.sb.prep_ships()
+
                 pygame.mouse.set_visible(False)
 
 
