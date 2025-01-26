@@ -9,7 +9,7 @@ class Bullet(Sprite): #Sprite is used for perform batch updates, collision detec
         self.screen = ai_game.screen;
         self.settings = ai_game.settings
         # self.color = self.settings.bullet_color
-        self.image = pygame.image.load('image/laser_img6.png')
+        self.image = pygame.image.load('C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\laser_img6.png')
         self.image = pygame.transform.scale(self.image, (6,20))
     
         self.rect = self.image.get_rect()

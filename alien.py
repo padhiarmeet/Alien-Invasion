@@ -8,7 +8,7 @@ class Alien(Sprite):
 
         self.screen = ai_game.screen
         self.settings = ai_game.settings
-        self.image = pygame.image.load('image/alien.png')
+        self.image = pygame.image.load('C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\alien.png')
         self.image = pygame.transform.scale(self.image, (80.95,56))
         self.rect = self.image.get_rect()
 
