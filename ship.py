@@ -10,11 +10,7 @@ class Ship(Sprite):
         self.settings = ai_game.settings
         self.screen_rect = ai_game.screen.get_rect()
 
-<<<<<<< HEAD
         self.image = pygame.image.load('image/jetha.png')
-=======
-        self.image = pygame.image.load('C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\ship.png')
->>>>>>> f5a5a8b4c394d39771f640ac082a084aeebe603d
         
         self.image = pygame.transform.scale(self.image, (110,110))
         self.rect = self.image.get_rect()
