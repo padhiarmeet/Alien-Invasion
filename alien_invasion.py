@@ -101,7 +101,7 @@ class AlienInvasion:
 
 
     def _fire_bullet(self):
-        laser_sound = pygame.mixer.Sound("image/laser.mp3")
+        laser_sound = pygame.mixer.Sound("C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\laser.mp3")
 
         if len(self.bullets) < self.settings.bullet_allowed:
             new_bullet = Bullet(self)
@@ -120,8 +120,8 @@ class AlienInvasion:
 
     def _check_bullet_alien_collision(self):
 
-            collision_sound = pygame.mixer.Sound("image/hit_1.mp3")
-            level_sound = pygame.mixer.Sound("image/level_up.wav")
+            collision_sound = pygame.mixer.Sound("C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\hit_1.mp3")
+            level_sound = pygame.mixer.Sound("C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\level_up.wav")
 
             print(len(self.bullets))
             collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
@@ -203,7 +203,7 @@ class AlienInvasion:
 
     def _ship_hit(self):
 
-        life_sound = pygame.mixer.Sound("image/ship_hit1.wav")
+        life_sound = pygame.mixer.Sound("C:\\Users\\mannm\\OneDrive\\Desktop\\PYTHON\\PYTHON\\Alien Invasion\\image\\ship_hit1.wav")
 
         if self.stats.ships_left > 0:
             self.stats.ships_left -= 1
